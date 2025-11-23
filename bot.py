@@ -19,7 +19,7 @@ async def web_server():
 class Bot(Client):
     def __init__(self):
         super().__init__(
-            "techifybots",
+            "AcceptronBot",
             api_id=API_ID,
             api_hash=API_HASH,
             bot_token=BOT_TOKEN,
@@ -45,7 +45,7 @@ class Bot(Client):
         print(f"Bot Started as {me.first_name}")
         
         # Send startup message to admin
-        if isinstance(ADMIN, int) and ADMIN:
+        if isinstance(ADMIN, int) or isinstance(ADMIN, str):
             try:
                 await self.send_message(ADMIN, f"**{me.first_name} is started...**")
             except Exception as e:
