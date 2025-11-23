@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'TechifyBots - Auto Approve Bot is Running!'
+    return 'AcceptronBot - Auto Approve Bot is Running!'
 
 @app.route('/health')
 def health_check():
