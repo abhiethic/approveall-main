@@ -44,7 +44,12 @@ class Bot(Client):
         me = await self.get_me()
         print(f"Bot Started as {me.first_name}")
         
-        
+        # Send startup message to admin
+        if isinstance(ADMIN, int) and ADMIN:
+            try:
+                await self.send_message(ADMIN, f"**{me.first_name} is started...**")
+            except Exception as e:
+                print(f"⚠️ Could not send startup message to admin: {e}")
         
         # Send startup message to log channel (if configured and valid)
         if LOG_CHANNEL:
